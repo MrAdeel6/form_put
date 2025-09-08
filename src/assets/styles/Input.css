@@ -1,0 +1,85 @@
+.class-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  outline: 1px solid lightgray;
+  padding: 3px;
+  margin: 5px;
+  border-radius: 3px;
+  transition: 0.3s all;
+  width: 95%;
+  align-self: center;
+}
+
+.focus-class {
+  outline: 1px solid black !important;
+}
+
+
+
+.input {
+  padding: 5px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  
+}
+
+.class-input label {
+  position: absolute;
+  left: 30px;
+  top: 7px;
+  font-size: 14px;
+  transition: all 0.2s;
+  background: whitesmoke;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: gray;
+}
+
+.class-input:hover> label {
+  top: -12px;
+  left: 20px;
+  font-size: 13px;
+  color: black;
+}
+
+.value-put {
+  top: -12px !important;
+  left: 20px !important;
+  font-size: 13px !important;
+  color: black !important;
+}
+
+.after-input {
+  position: absolute;
+  right: 0;
+  margin: 8px;
+  font-size: 10px;
+  background: lightgoldenrodyellow;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+
+.animate {
+  animation: showInput 0.3s !important;
+}
+
+@keyframes showInput {
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+
+.small-input {
+  width: 50%;
+}
+
+
+
