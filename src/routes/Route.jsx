@@ -5,7 +5,7 @@ import FormPut from '../components/FormPut.jsx';
  const Router = () => {
   return (
     <Routes>
-      <Route path="/form-put" element={<FormPut />} />
+      <Route path="/" element={<FormPut />} />
     </Routes>
   );
 };
