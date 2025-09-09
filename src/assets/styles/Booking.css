@@ -1,0 +1,167 @@
+.main-work-class {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
+}
+
+.details-class {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.map-class {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  gap: 5px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.map-class .map {
+  flex: 1;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.map-details {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.dis-icon {
+  color: darkgoldenrod;
+}
+
+.du-icon {
+  color: darkgoldenrod;
+}
+
+.map-details div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+
+.adress-detaill-class {
+  flex: 1;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.pic-up-details-class {}
+
+.pic-up-details-class .pic-up-main {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border-bottom: 1px solid darkgoldenrod;
+}
+
+.arrow-icon {
+  background: darkgoldenrod;
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-right: 5px;
+}
+
+
+.loc-details-main {
+  position: relative;
+  margin: 5px;
+}
+
+.loc-details-main>div {
+  display: flex;
+  align-items: center;
+  background: gray;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 8px;
+}
+
+.loc-details-main>div span {
+  color: white;
+}
+
+des {
+  color: lightgray;
+  font-size: 16px;
+}
+
+
+
+.loc-details-main>div {
+  margin: 8px;
+  font-size: 17px;
+}
+
+
+.loc-details-main>div:nth-child(2) {}
+
+.mark-icon {
+  color: darkgoldenrod;
+}
+
+.trip-details-main {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  gap: 12px;
+}
+
+.trip-details-main>div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+}
+
+.de-class {
+  display: flex;
+  flex-direction: column;
+}
+
+.books-class {
+  display: flex;
+  flex: 2;
+  margin: 10px;
+  overflow: scroll;
+}
+
+.books-class, .books-main, .real-data-class, .real-data-main {
+  width: 100%;
+}
+
+.real-data-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+}
+
+
+
+@media screen and (max-width: 980px) {
+   .details-class {
+     display: none;
+   }
+}
+
+
+
+
