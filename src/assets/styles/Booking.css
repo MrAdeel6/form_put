@@ -3,6 +3,12 @@
   width: 100%;
   display: flex;
   margin-top: 15px;
+  background: #0d0d0d; /* black background */
+  color: #fff; /* default text white */
+}
+
+body {
+  background: #0d0d0d !important;
 }
 
 .details-class {
@@ -11,14 +17,16 @@
   flex: 1;
 }
 
+/* Map Section */
 .map-class {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: whitesmoke;
+  background: #111; /* dark black */
   gap: 5px;
   border-radius: 10px;
   margin: 5px;
+  border: 1px solid #d4af37; /* golden border */
 }
 
 .map-class .map {
@@ -32,88 +40,92 @@
   padding: 5px;
   border-radius: 10px;
   display: flex;
-  gap: 15px;
-  align-items: center;
+  gap: 15px !important;
+  align-items: center !important;
+  justify-content: space-around;
+  background: #0d0d0d;
+  border-top: 1px solid #d4af37;
 }
 
-.dis-icon {
-  color: darkgoldenrod;
-}
-
-.du-icon {
-  color: darkgoldenrod;
-}
-
-.map-details div {
+.map-details>div {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
 }
 
+.dis-icon,
+.du-icon {
+  color: #d4af37; /* golden icons */
+}
 
+.map-details div span {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* Address Section */
 .adress-detaill-class {
   flex: 1;
-  background: whitesmoke;
+  background: #111;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   margin: 5px;
+  border: 1px solid #d4af37;
 }
-
-.pic-up-details-class {}
 
 .pic-up-details-class .pic-up-main {
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 5px;
-  border-bottom: 1px solid darkgoldenrod;
+  border-bottom: 1px solid #d4af37;
+  color: #fff;
 }
 
 .arrow-icon {
-  background: darkgoldenrod;
+  color: #000;
+  background: #d4af37;
   border-radius: 8px;
   margin-left: 8px;
   margin-right: 5px;
+  padding: 2px;
 }
-
 
 .loc-details-main {
   position: relative;
   margin: 5px;
 }
 
-.loc-details-main>div {
+.loc-details-main > div {
   display: flex;
   align-items: center;
-  background: gray;
-  padding: 3px;
-  gap: 2px;
+  background: #222;
+  padding: 6px;
+  gap: 6px;
   border-radius: 8px;
+  border: 1px solid #d4af37;
+  color: #fff;
 }
 
-.loc-details-main>div span {
-  color: white;
+.loc-details-main > div span {
+  color: #fff;
+  font-weight: bold;
 }
 
 des {
-  color: lightgray;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.loc-details-main > div {
+  margin: 8px;
   font-size: 16px;
 }
 
-
-
-.loc-details-main>div {
-  margin: 8px;
-  font-size: 17px;
-}
-
-
-.loc-details-main>div:nth-child(2) {}
-
 .mark-icon {
-  color: darkgoldenrod;
+  color: #d4af37;
 }
 
 .trip-details-main {
@@ -123,11 +135,18 @@ des {
   gap: 12px;
 }
 
-.trip-details-main>div {
+.trip-details-main > div {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 20px;
+  gap: 8px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.date-main span,
+.time-main span {
+  color: #d4af37;
+  font-weight: 500;
 }
 
 .de-class {
@@ -135,14 +154,19 @@ des {
   flex-direction: column;
 }
 
+/* Books Section (Cards) */
 .books-class {
   display: flex;
   flex: 2;
   margin: 10px;
   overflow: scroll;
+  height: 88vh;
 }
 
-.books-class, .books-main, .real-data-class, .real-data-main {
+.books-class,
+.books-main,
+.real-data-class,
+.real-data-main {
   width: 100%;
 }
 
@@ -151,15 +175,151 @@ des {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 7px;
+  gap: 10px;
+}
+
+.real-data-main .card {
+  background: #0d0d0d;
+  border: 1px solid #d4af37;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.real-data-main .card:hover {
+  background: #111;
+  box-shadow: 0px 0px 12px rgba(212, 175, 55, 0.6);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 980px) {
+  .details-class {
+    display: none;
+  }
 }
 
 
 
+/* 🌑 Wrapper Centering */
+.button-book-now-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* ✨ Button Style */
+.button-book-now-main button {
+  background: linear-gradient(135deg, #ae9035, #ffd700);
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px rgba(174, 144, 53, 0.6),
+              0 0 24px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ Hover Glow */
+.button-book-now-main button:hover {
+  background: linear-gradient(135deg, #ffd700, #ae9035);
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.9),
+              0 0 40px rgba(255, 215, 0, 0.7),
+              0 0 60px rgba(255, 215, 0, 0.5);
+}
+
+/* 💫 Shine Effect */
+.button-book-now-main button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+.button-book-now-main button:hover::after {
+  left: 130%;
+}
+
+
+
+/* Sidebar hidden by default on tablet/mobile */
+.details-class {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+  display: none;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.sidebar-toggle-btn button {
+  background: goldenrod;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-toggle-btn button:hover {
+  background: #ffd700;
+  box-shadow: 0 0 10px rgba(255,215,0,0.8);
+}
+
+/* Tablet/Mobile Responsive */
 @media screen and (max-width: 980px) {
-   .details-class {
-     display: none;
-   }
+  .details-class {
+    position: fixed;
+    top: 60px; /* adjust according to topnav height */
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: #111;
+    color: goldenrod;
+    z-index: 1500;
+    transform: translateX(-100%);
+    box-shadow: 2px 0 12px rgba(0,0,0,0.5);
+  }
+
+  .details-class.active {
+    transform: translateX(0);
+  }
+
+  .books-class {
+    flex: 1;
+    margin: 5px;
+  }
+
+  .sidebar-toggle-btn {
+    display: block;
+  }
 }
 
 

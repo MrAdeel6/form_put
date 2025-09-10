@@ -1,5 +1,17 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
 .class {
-  background: whitesmoke;
+  background: #101618;
   padding: 10px;
   border-radius: 10px;
   display: flex;
@@ -11,6 +23,13 @@
   box-shadow: 1px 30px 60px black;
   z-index: 5;
   width: 80vw;
+  gap: 15px;
+}
+
+.bolder-class {
+  background: #939ba0;
+  padding: 1px;
+  border-radius: 10px;
 }
 
 /* Response From Css ✓ TechJs ✓;*/
@@ -25,34 +44,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2px;
+  margin: 4px;
 }
 
 .button-class button {
   width: 100%;
   padding: 6px;
   border: none;
-  background: #9797973a;
+  background: #101618;
   font-size: 14px;
   border-radius: 6px;
   transition: 0.4s all;
   color: gray;
-  outline: 0.1vw solid black;
 }
 
 .button-class button:active {
-  background: whitesmoke;
-  color: black;
+  background: transparent;
+  color: #caa531;
   outline: none;
 }
 
 .button-class button:hover {
-  background: lightgray;
+  background: #b49437;
 }
 
 .active-btn {
-  background: whitesmoke !important;
-  color: black !important;
+  background: transparent !important;
+  color: #caa531 !important;
   outline: none !important;
 }
 
@@ -86,6 +104,7 @@
   align-items: center;
   margin-left: 5px;
   gap: 5px;
+  color: #caa531;
 }
 
 
@@ -100,11 +119,11 @@
 
 .search-btn-class .button {
   border: none;
-  background: #d5af34;
+  background: #caa531;
   padding: 5px;
   width: 100%;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 5px;
   position: relative;
   display: flex;
@@ -127,6 +146,7 @@
   position: absolute !important;
   left: 65% !important;
   top: 10% !important;
+  background: transparent;
 }
 
 .button span {

@@ -1,0 +1,79 @@
+.timepicker-container {
+  position: absolute;
+  top: 0;
+}
+
+.timepicker-box {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.timepicker-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.timepicker-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timepicker-col button {
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.timepicker-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.colon {
+  font-size: 28px;
+  color: white;
+}
+
+.ampm button {
+  background: none;
+  border: 2px solid #d4af37;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 3px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ampm button.active {
+  background: #d4af37;
+  color: black;
+}
+
+.set-btn {
+  width: 100%;
+  background: #d4af37;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.set-btn:hover {
+  opacity: 0.9;
+}

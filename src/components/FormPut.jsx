@@ -6,11 +6,39 @@ import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
 import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
-import Rating from '../assets/images/HeaderRating.439acd18.svg'
+import Rating from '../assets/images/HeaderRating.439acd18.svg';
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
+import EventIcon from '@mui/icons-material/Event';
+import ScheduleIcon from '@mui/icons-material/Schedule';
+import TimePickerPopup from './small_componets/TimePicker.jsx';
+import { LoadScript } from "@react-google-maps/api";
+import { useNavigate } from 'react-router';
 
 const FormPut = () => {
+   const navigate = useNavigate();
+
+
   const [ activeNav, setNav ] = useState('');
   const [ stopInput, setStops ] = useState([]);
+  const [ show, setShow ] = useState("none");
+  const [ time, setTime ] = useState("0:00");
+  const [ top, setTop ] = useState(0);
+  const [ left, setLeft ] = useState(0);
+
+const [ startLoc, setSLoc ] = useState("");
+const [ endLoc, setELoc ] = useState("");
+const [ date, setDate ] = useState("");
+
+  function handleSubmit() {
+    sessionStorage.setItem('form-data',JSON.stringify({
+      startLoc,
+      endLoc,
+      time,
+      date
+    }));
+    navigate("/booking/car")
+  }
+
   
   
   function ActiveNavBtn(e) {
@@ -21,9 +49,26 @@ const FormPut = () => {
     e.target.classList = "active-btn";
     setNav(e.target.innerText);
   }
+
+const handlePickupS = (place) => {
+   const places = place.formatted_address;
+   setSLoc(places);
+  };
+
+  const handlePickupL = (place) => {
+   const places = place.formatted_address;
+   setELoc(places);
+  };
+
+
+  
+
+
   return (
   <>
+   <LoadScript googleMapsApiKey="AIzaSyDodpqedFYFgBV-EEWIpOtXwRaodqzLgQQ" libraries={["places"]}>
     <div className="wrapper" >
+      <div className='bolder-class'>
        <div className="class">
          <div className="top-nav-button">
            <div className="button-class">
@@ -34,7 +79,7 @@ const FormPut = () => {
            </div>
          </div>
          <div className="input-class">
-           <Input label="Pickup Location" id="pic-loc" Icon={LocationPinIcon} type={'location'} after={
+           <Input onPlaceSelected={handlePickupS} sugg={true} label="Pickup Location" id="pic-loc" Icon={AddLocationAltIcon} type={'location'} after={
              (<div onClick={()=>{
                var tem = [...stopInput];
                tem.push({});
@@ -46,16 +91,25 @@ const FormPut = () => {
            {
              stopInput.length !== 0 &&
              stopInput.map((element, index) =>
-           <Input label="Stop Location" id={`stop-input-${index}`} Icon={LocationPinIcon} type={'location'} />)
+           <Input label="Stop Location" id={`stop-input-${index}`} Icon={AddLocationAltIcon} type={'location'} />)
            }
-           <Input label="End location" id="end-loc" Icon={LocationPinIcon} type={'location'} />
+           <Input sugg={true} onPlaceSelected={handlePickupL} label="Drop Location" id="end-loc" Icon={AddLocationAltIcon} type={'location'} />
            {
              activeNav === 'HOURLY' && 
              <Input label="Hour" id="hour" Icon={AccessTimeFilledIcon} type="hour" animate={true} />
            }
            <div className="bottom-input">
-             <Input small={true} type="date" id="date" label="Date" Icon={DateRangeOutlinedIcon} />
-             <Input small={true} type="time" id="time" label="Time" Icon={DateRangeOutlinedIcon} />
+             <Input small={true} onCh={(e)=>{
+              setDate(e.target.value);
+              console.log("this "+e.target.value);
+             }} type="date" id="date" label="Date" Icon={EventIcon} />
+             <Input setLeft={setLeft} setTop={setTop} top={top} left={left} value={time} onClick={(e)=>{
+              if(show == 'none') {
+                setShow("block")
+              } else {
+                setShow("none")
+              }
+             }} small={true} type="input" id="time" label="Time" Icon={ScheduleIcon} />
            </div>
            <div className="des-class">
            <HistoryOutlinedIcon style={{
@@ -64,7 +118,9 @@ const FormPut = () => {
              <span>Chauffeur will wait 25 minutes as a complimentary service</span>
            </div>
            <div className="search-btn-class">
-             <div className="button">
+             <div className="button" onClick={()=>{
+              handleSubmit();
+             }}>
                <span>SEARCH</span>
                <ArrowForwardOutlinedIcon className="arrow-icon" />
              </div>
@@ -72,11 +128,16 @@ const FormPut = () => {
          </div>
        </div>
     </div>
-       <div className="review-box-wrapper">
+    </div>
+    <TimePickerPopup show={show} onShow={setShow} onSet={setTime} left={left} top={top} />
+       <div className="review-box-wrapper" style={{
+        display: "none"
+       }}>
          <div className="review-box-class">
           <img src={Rating} />
          </div>
        </div>
+       </LoadScript>
     </>
   );
 };

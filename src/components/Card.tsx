@@ -3,7 +3,7 @@ import '../assets/styles/Card.css';
 import Car1 from '../assets/images/1749138265605-Cadillac CT4 2024 Exterior.png';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-const Cards = () => {
+const Cards = ({ onBook, data }) => {
   return (
     <div className="card-wrapper" >
       <div className="card-class" >
@@ -16,11 +16,11 @@ const Cards = () => {
           <div className="card-car-details-class">
             <div className="card-car-details-main" >
               <div className="car-details" >
-                <span>Car Name</span>
+                <span>{data.carName}</span>
                 <span>description Car</span>
                 <div className="opt-main" >
                   <div className="opt-section1" >
-
+                    
                   </div>
                   <div className="opt-section2" >
 
@@ -40,6 +40,14 @@ const Cards = () => {
                 <span>includes tax and all of all</span>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="button-book-now-class">
+          <div className="button-book-now-main">
+            <button onClick={()=>{
+              onBook &&
+              onBook();
+            }}>Book Now</button>
           </div>
         </div>
       </div>

@@ -1,19 +1,19 @@
 .class-input {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ;
   position: relative;
-  outline: 1px solid lightgray;
+  outline: 1px solid #FFD700;
   padding: 3px;
   margin: 5px;
   border-radius: 3px;
   transition: 0.3s all;
-  width: 95%;
+  width: 96%;
   align-self: center;
 }
 
 .focus-class {
-  outline: 1px solid black !important;
+  outline: 1px solid #FFD700 !important;
 }
 
 
@@ -24,7 +24,7 @@
   background: transparent;
   border: none;
   outline: none;
-  
+  color: #FFD700;
 }
 
 .class-input label {
@@ -33,35 +33,45 @@
   top: 7px;
   font-size: 14px;
   transition: all 0.2s;
-  background: whitesmoke;
+  background: #101618;
   padding-left: 3px;
   padding-right: 3px;
-  color: gray;
+  color: #FFD700;
 }
 
 .class-input:hover> label {
   top: -12px;
   left: 20px;
   font-size: 13px;
-  color: black;
+  color: #FFD700;
 }
+
+
+.class-input input:focus> label {
+    top: -12px;
+  left: 20px;
+  font-size: 13px;
+  color: #FFD700;
+}
+
+
 
 .value-put {
   top: -12px !important;
   left: 20px !important;
   font-size: 13px !important;
-  color: black !important;
 }
 
 .after-input {
   position: absolute;
   right: 0;
-  margin: 8px;
+  margin: 15px;
   font-size: 10px;
-  background: lightgoldenrodyellow;
-  border: 1px solid black;
+  background: transparent;
+  border: 1px solid #FFD700;
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 10px;
+  color: #FFD700;
 }
 
 
@@ -81,5 +91,9 @@
   width: 50%;
 }
 
+
+.small-input>label {
+  display: none;
+}
 
 

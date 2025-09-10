@@ -1,17 +1,111 @@
 .top-nav-wrapper {
   display: flex;
   width: 100vw;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .top-nav-class {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: lightgray;
-  color: black;
+  background: black;
+  color: goldenrod;
   width: 100%;
-  padding: 5px;
-  font-size: 25px;
+  padding: 10px 20px;
+  font-size: 22px;
   font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 2px solid goldenrod;
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.6);
+  transition: all 0.3s ease-in-out;
 }
 
+/* Hover / Active state */
+.top-nav-class:hover {
+  background: #111;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+/* Icons inside nav */
+.top-nav-class .bk-icon {
+  color: goldenrod;
+  font-size: 26px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.top-nav-class .bk-icon:hover {
+  color: #ffdf80;
+  transform: scale(1.2);
+}
+
+
+
+/* Step Box */
+.step-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.step {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid goldenrod;
+  color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.step.active {
+  background: goldenrod;
+  color: black;
+  box-shadow: 0 0 12px rgba(218, 165, 32, 0.8);
+  transform: scale(1.1);
+}
+
+.step:hover {
+  background: #222;
+  color: #ffdf80;
+  cursor: pointer;
+}
+
+/* Responsive Steps */
+@media screen and (max-width: 480px) {
+  .step {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .top-nav-class {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+  .top-nav-class .bk-icon {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-nav-class {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+  .top-nav-class .bk-icon {
+    font-size: 20px;
+  }
+}

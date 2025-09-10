@@ -8,7 +8,8 @@ import Booking from '../components/Booking.jsx';
   return (
     <Routes>
       <Route path="/booking" element={<FormPut />} />
-      <Route path="" element={<Booking />} />
+      <Route path="/" element={<FormPut />} />
+      <Route path="/booking/car" element={<Booking />} />
     </Routes>
   );
 };
