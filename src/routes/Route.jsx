@@ -7,11 +7,10 @@ import Booking from '../components/Booking.jsx';
  const Router = () => {
   return (
     <Routes>
-      <Route path="/booking" element={<FormPut />} />
-      <Route path="/" element={<FormPut />} />
-      <Route path="/booking/car" element={<Booking />} />
+      <Route path="/" element={<Booking />} />
     </Routes>
   );
 };
 
 export default Router;
+
