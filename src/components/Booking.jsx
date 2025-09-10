@@ -32,7 +32,7 @@ const Booking = () => {
 
 
   useEffect(()=>{
-    getTokens();
+//    getTokens();
   }, [])
 
 
@@ -162,3 +162,4 @@ const Booking = () => {
 };
 
 export default Booking;
+
