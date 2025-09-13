@@ -2,7 +2,7 @@ import React from 'react';
 import '../../assets/styles/TopNav.css';
 import ArrowBackSharpIcon from '@mui/icons-material/ArrowBackSharp';
 
-const TopNav = () => {
+const TopNav = ({onBack}) => {
   return (
     <div className="top-nav-wrapper">
       <div className="top-nav-class">
@@ -30,6 +30,10 @@ const TopNav = () => {
 
           {/* Back Icon */}
           <ArrowBackSharpIcon
+          onClick={()=>{
+            onBack &&
+            onBack();
+          }}
             className="bk-icon"
             style={{
               fontSize: '32px',

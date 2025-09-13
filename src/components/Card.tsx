@@ -30,6 +30,7 @@ const Cards = ({ onBook, data }) => {
             </div>
           </div>
         </div>
+        <div className="box-right-class" >
         <div className="card-car-prize-class" >
           <div className="card-car-prize-main" >
             <div className="card-car-prize" >
@@ -50,6 +51,7 @@ const Cards = ({ onBook, data }) => {
             }}>Book Now</button>
           </div>
         </div>
+         </div>
       </div>
     </div>
   )

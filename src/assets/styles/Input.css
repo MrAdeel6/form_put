@@ -10,6 +10,7 @@
   transition: 0.3s all;
   width: 96%;
   align-self: center;
+  overflow: hidden;
 }
 
 .focus-class {

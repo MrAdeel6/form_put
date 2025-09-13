@@ -10,4 +10,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>
 </BrowserRouter>,
-)
+);
+
+window.addEventListener('error', (e)=>{
+   alert(e.message)
+})

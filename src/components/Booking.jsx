@@ -12,30 +12,34 @@ import BottomNav from '../components/small_componets/BottomNav.tsx';
 import { useNavigate } from 'react-router';
 
 
-const Booking = () => {
+const Booking = ({ visible, setVisible, data, setForm }) => {
+  const [ MarkRoute, setRender ] = useState(()=>{});
+  const [ distance, setDistance ] = useState('0');
+  const [ duration, setDuration ] = useState('0');
  const navigate = useNavigate();
  const [ dataMain, setMain ] = useState({});
 
-
    function getTokens() {
-    const datas = sessionStorage.getItem("form-data");
-    console.log(datas)
-    const { startLoc, endLoc, date, time, id } = datas ? JSON.parse(datas) : {} ;
-    if(startLoc) {
+    const { startLoc, endLoc, date, time, placeAdress1, placeAdress2 } = datas ? JSON.parse(datas) : {} ;
+    if(placeAdress1 || placeAdress2) {
       // gets show dataa
-      setMain(JSON.parse(datas))
+      setMain(JSON.parse(datas));
     } else {
-      navigate("/booking");
-      window.location.reload();
+     
     }
   } 
 
 
   useEffect(()=>{
-//    getTokens();
-  }, [])
+  //  getTokens();
+  setMain(data);
+ // alert(JSON.stringify(data))
+  }, [data]);
 
 
+useEffect(()=>{
+  typeof MarkRoute === 'function' ? MarkRoute() : ''
+}, [dataMain]);
 
 
 
@@ -69,8 +73,13 @@ const Booking = () => {
   ];
 
   return (
-    <div className="booking-page">
-      <TopNav />
+    <div className="booking-page" style={{
+      display: visible ? 'block' : 'none',
+    }}>
+      <TopNav onBack={()=>{
+        setVisible(false);
+        setForm(true);
+      }} />
 
       {/* Sidebar Toggle Button (tablet/mobile) */}
       <div className="sidebar-toggle-btn">
@@ -83,15 +92,20 @@ const Booking = () => {
         {/* Sidebar Section */}
         <div className={`details-class ${showSidebar ? "active" : ""}`}>
           <div className="map-class">
-            <div className="map"><Map /></div>
+            <div className="map">
+            
+              
+            <Map dataMain={dataMain} call={visible} setDuration={setDuration} setDistance={setDistance} />
+            
+            </div>
             <div className="map-details">
               <div className="distance-class">
                 <SocialDistanceIcon className="dis-icon" />
-                <span>100km</span>
+                <span>{distance}</span>
               </div>
               <div className="duration-class">
                 <AccessTimeIcon className="du-icon" />
-                <span>10m</span>
+                <span>{duration}</span>
               </div>
             </div>
           </div>
@@ -162,4 +176,3 @@ const Booking = () => {
 };
 
 export default Booking;
-

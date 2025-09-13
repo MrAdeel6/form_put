@@ -43,7 +43,7 @@ export default function TimePickerPopup({ initial = "03:15 AM", onSet, show, onS
         display: show,
         left: left,
         top: top,
-        zIndex: 'modal'
+        zIndex: '999999'
     }}>
       <div className="timepicker-box">
         <div className="timepicker-row">
